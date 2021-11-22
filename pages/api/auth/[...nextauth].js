@@ -4,9 +4,9 @@ import { Client as FaunaClient } from 'faunadb';
 import { FaunaAdapter } from '@next-auth/fauna-adapter';
 
 const faunaClient = new FaunaClient({
-  secret: PROCESS.ENV.FAUNA_SECRET_KEY,
+  secret: process.env.FAUNA_SECRET_KEY,
   scheme: 'http',
-  domain: PROCESS.ENV.FAUNA_DOMAIN,
+  domain: process.env.FAUNA_DOMAIN,
   port: 8443,
 });
 
