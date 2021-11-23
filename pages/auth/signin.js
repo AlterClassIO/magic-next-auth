@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useRouter } from 'next/router';
 import { signIn, getSession } from 'next-auth/client';
+import { toast } from 'react-hot-toast';
 import { LightningBoltIcon, MailOpenIcon } from '@heroicons/react/outline';
 
 const MagicLinkModal = ({ show = false, email = '' }) => {
@@ -52,7 +53,9 @@ const SignIn = () => {
 
   const handleSignIn = async e => {
     e.preventDefault();
+    let toastId;
     try {
+      toastId = toast.loading('Loading...');
       setDisabled(true);
       // Perform sign in
       const { error } = await signIn('email', {
@@ -65,8 +68,9 @@ const SignIn = () => {
         throw new Error(error);
       }
       setShowModal(true);
+      toast.success('Magic link successfully sent', { id: toastId });
     } catch (error) {
-      // Handle error here
+      toast.error('Unable to send magic link', { id: toastId });
     } finally {
       setDisabled(false);
     }

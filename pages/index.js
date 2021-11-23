@@ -1,23 +1,14 @@
 import { signOut, useSession } from 'next-auth/client';
-import Head from 'next/head';
 import Link from 'next/link';
 import { LightningBoltIcon } from '@heroicons/react/outline';
+import { HeartIcon } from '@heroicons/react/solid';
 
 export default function Home() {
-  const [session, loading] = useSession();
+  const [session] = useSession();
 
   return (
-    <>
-      <Head>
-        <title>Magic NextAuth | AlterClass</title>
-        <meta
-          name="description"
-          content="Magic Link Authentication in Next.js with NextAuth and Fauna by AlterClass"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="min-h-screen container mx-auto px-6 py-12 flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-1 container mx-auto px-6 py-12 flex flex-col items-center justify-center">
         <h1 className="inline-flex items-center space-x-2">
           <LightningBoltIcon className="flex-shrink-0 w-16 h-16 text-blue-500" />
           <span className="h-16 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-blue-700">
@@ -28,7 +19,7 @@ export default function Home() {
           Magic Link Authentication in Next.js with NextAuth and Fauna
         </p>
         <div className="mt-8">
-          {loading ? null : session?.user ? (
+          {session?.user ? (
             <div className="text-lg flex flex-col space-y-1 bg-gray-200 rounded-lg px-6 py-3 animate-appear">
               <p>
                 Signed in as <strong>{session.user.email}</strong>
@@ -49,6 +40,19 @@ export default function Home() {
           )}
         </div>
       </main>
-    </>
+
+      <footer className="text-center container mx-auto px-4 sm:px-6 py-6">
+        <a
+          href="https://alterclass.io/teaching"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-500 hover:text-current"
+        >
+          Made with{' '}
+          <HeartIcon className="inline-block w-4 h-4 -mt-1 text-red-600 animate-pulse" />{' '}
+          by AlterClass.io
+        </a>
+      </footer>
+    </div>
   );
 }
