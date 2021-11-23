@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next-auth/fauna-adapter": "^0.2.4",
+    "faunadb": "^4.4.1",
     "next": "12.0.4",
-    "next-auth": "^4.0.0-beta.7",
+    "next-auth": "^3.29.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },

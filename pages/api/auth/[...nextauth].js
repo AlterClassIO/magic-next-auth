@@ -5,18 +5,24 @@ import { FaunaAdapter } from '@next-auth/fauna-adapter';
 
 const faunaClient = new FaunaClient({
   secret: process.env.FAUNA_SECRET_KEY,
-  scheme: 'http',
   domain: process.env.FAUNA_DOMAIN,
-  port: 8443,
 });
 
 export default NextAuth({
   providers: [
     EmailProvider({
-      server: process.env.EMAIL_SERVER,
+      server: {
+        host: process.env.EMAIL_SERVER_HOST,
+        port: process.env.EMAIL_SERVER_PORT,
+        auth: {
+          user: process.env.EMAIL_SERVER_USER,
+          pass: process.env.EMAIL_SERVER_PASSWORD,
+        },
+      },
       from: process.env.EMAIL_FROM,
       maxAge: 10 * 60, // Magic links are valid for 10 min only
     }),
   ],
-  adapter: FaunaAdapter(faunaClient),
+  adapter: FaunaAdapter({ faunaClient }),
+  theme: 'light',
 });
