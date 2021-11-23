@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1 container mx-auto px-6 py-12 flex flex-col items-center justify-center">
-        <h1 className="inline-flex items-center space-x-2">
-          <LightningBoltIcon className="flex-shrink-0 w-16 h-16 text-blue-500" />
-          <span className="h-16 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-blue-700">
+        <h1 className="inline-flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
+          <LightningBoltIcon className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 text-blue-500" />
+          <span className="sm:h-16 text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-blue-700 text-center">
             Magic NextAuth
           </span>
         </h1>
-        <p className="mt-4 text-gray-500 text-2xl">
+        <p className="mt-4 text-gray-500 text-xl sm:text-2xl text-center">
           Magic Link Authentication in Next.js with NextAuth and Fauna
         </p>
         <div className="mt-8">

@@ -78,14 +78,14 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col items-center justify-center">
-        <LightningBoltIcon className="flex-shrink-0 w-16 h-16 text-blue-500" />
-        <h1 className="mt-2 text-4xl text-center font-bold">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
+        <LightningBoltIcon className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 text-blue-500" />
+        <h1 className="mt-2 text-2xl sm:text-4xl text-center font-bold">
           Sign in to your account
         </h1>
         <form
           onSubmit={handleSignIn}
-          className="mt-8 rounded-lg shadow-md bg-white p-8 space-y-6 w-full max-w-md"
+          className="mt-8 rounded-lg shadow-md bg-white px-4 py-6 sm:px-8 sm:py-8 space-y-6 w-full max-w-md"
         >
           <div className="flex flex-col space-y-1">
             <label htmlFor="email" className="text-gray-500 text-sm">

@@ -34,6 +34,7 @@ const sendVerificationRequest = ({ identifier, url }) => {
     to: identifier,
     subject: 'Your sign-in link for Magic NextAuth',
     html: emailTemplate({
+      base_url: process.env.NEXTAUTH_URL,
       signin_url: url,
       email: identifier,
     }),
@@ -53,6 +54,7 @@ const sendWelcomeEmail = async user => {
       to: email,
       subject: 'Welcome to Magic NextAuth! 🎉',
       html: emailTemplate({
+        base_url: process.env.NEXTAUTH_URL,
         support_email: 'support@alterclass.io',
       }),
     });
