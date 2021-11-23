@@ -1,42 +1,8 @@
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  tab-size: 4;
-}
-
-body {
-  font-family: -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
-    sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  margin: 0;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
-main {
-  width: 100%;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-main h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+body,
+#__next {
+  @apply bg-gray-100 text-gray-900;
 }

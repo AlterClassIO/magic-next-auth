@@ -24,5 +24,8 @@ export default NextAuth({
     }),
   ],
   adapter: FaunaAdapter({ faunaClient }),
-  theme: 'light',
+  pages: {
+    signIn: '/auth/signin',
+    signOut: '/',
+  },
 });
