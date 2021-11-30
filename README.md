@@ -22,7 +22,7 @@ npm install
 
 ### 2. Configure your local environment
 
-Rename the .env.local.example file in this directory to .env.local (which will
+Rename the `.env.local.example` file in this directory to `.env.local` (which will
 be ignored by Git):
 
 ```
