@@ -1,10 +1,12 @@
 # Magic NextAuth
 
-Magic Link Authentication in Next.js with NextAuth and Fauna by [AlterClass.io](https://alterclass.io/teaching)
+Magic Link Authentication in Next.js with NextAuth and Fauna by [AlterClass.io](https://alterclass.io).
 
-**Preview the example live [here](https://magic-next-auth.vercel.app/).**
+- Learn to build this application step-by-step by following the tutorial on [AlterClass](https://alterclass.io/tutorials/magic-link-authentication-in-nextjs-with-nextauth-and-fauna).
 
-**Deploy the example using Vercel:**
+- Preview the app live [here](https://magic-next-auth.vercel.app/).
+
+- Deploy the same app using Vercel:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/AlterClassIO/magic-next-auth&project-name=Magic+Auth+by+AlterClass&repository-name=Magic+Auth+by+AlterClass)
 
