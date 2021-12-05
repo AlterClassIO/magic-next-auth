@@ -76,4 +76,5 @@ export default NextAuth({
   ],
   adapter: FaunaAdapter(client),
   events: { createUser: sendWelcomeEmail },
+  secret: process.env.NEXTAUTH_SECRET,
 });
