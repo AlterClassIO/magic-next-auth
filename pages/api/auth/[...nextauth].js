@@ -41,7 +41,7 @@ const sendVerificationRequest = ({ identifier, url }) => {
   });
 };
 
-const sendWelcomeEmail = async user => {
+const sendWelcomeEmail = async ({ user }) => {
   const { email } = user;
 
   try {
@@ -49,7 +49,7 @@ const sendWelcomeEmail = async user => {
       encoding: 'utf8',
     });
     const emailTemplate = Handlebars.compile(emailFile);
-    transporter.sendMail({
+    await transporter.sendMail({
       from: `"⚡ Magic NextAuth" ${process.env.EMAIL_FROM}`,
       to: email,
       subject: 'Welcome to Magic NextAuth! 🎉',
