@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/react';
 import { CheckCircleIcon } from '@heroicons/react/outline';
+import Layout from '../../components/Layout';
 
 const ConfirmRequest = () => {
-  const [session, loading] = useSession();
+  const { data: session, status } = useSession();
+  const loading = status === 'loading';
+
   const router = useRouter();
 
   if (!loading && !session) {
@@ -12,7 +15,7 @@ const ConfirmRequest = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-12 max-w-md mx-auto">
+    <Layout>
       {loading ? (
         <p>Loading...</p>
       ) : !session ? (
@@ -37,7 +40,7 @@ const ConfirmRequest = () => {
           </p>
         </>
       )}
-    </div>
+    </Layout>
   );
 };
 

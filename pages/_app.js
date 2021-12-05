@@ -1,9 +1,9 @@
 import '../styles/globals.css';
-import { Provider } from 'next-auth/client';
+import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
 import { Toaster } from 'react-hot-toast';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
       <Head>
@@ -14,9 +14,9 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Provider session={pageProps.session}>
+      <SessionProvider session={session}>
         <Component {...pageProps} />
-      </Provider>
+      </SessionProvider>
       <Toaster />
     </>
   );

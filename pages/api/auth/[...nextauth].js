@@ -7,7 +7,7 @@ import path from 'path';
 import nodemailer from 'nodemailer';
 import Handlebars from 'handlebars';
 
-const faunaClient = new FaunaClient({
+const client = new FaunaClient({
   secret: process.env.FAUNA_SECRET_KEY,
   domain: process.env.FAUNA_DOMAIN,
 });
@@ -74,6 +74,6 @@ export default NextAuth({
       sendVerificationRequest,
     }),
   ],
-  adapter: FaunaAdapter({ faunaClient }),
+  adapter: FaunaAdapter(client),
   events: { createUser: sendWelcomeEmail },
 });
